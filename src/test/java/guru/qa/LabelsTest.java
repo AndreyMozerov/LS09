@@ -22,7 +22,12 @@ public class LabelsTest {
 
     @Test
     public  void testDynamicLabels(){
-
+        Allure.getLifecycle().updateTestCase(t -> t.setName("Создание Issue для авторизованного пользователя"));
+        Allure.feature("Issue в репозитории");
+        Allure.story("Создание Issue");
+        Allure.label("owner", "eroshenkoam");
+        Allure.label("severity", SeverityLevel.CRITICAL.value());
+        Allure.link("Testing", "https://testing.github.com");
 
     }
 }

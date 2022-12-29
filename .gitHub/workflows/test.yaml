@@ -1,0 +1,19 @@
+name: Test
+
+run-name: ${{ github.actor }} is learning GitHub Actions
+
+on: [ push ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+            java-version: '11'
+      - run: npm install -g bats
+      - run: bats -v
