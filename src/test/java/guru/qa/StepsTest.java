@@ -37,4 +37,17 @@ public class StepsTest {
             $(withText("#"+ ISSUE)).should(visible);
         });
     }
+
+    @Test
+    public  void testAnnotatedStep(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        WebSteps steps = new WebSteps();
+
+        steps.openMainPage();
+        steps.searchForRepository(REPOZITORY);
+        steps.clickOnRepositoryLink(REPOZITORY);
+        steps.openIssuesTab();
+        steps.shouldSeeIssueWithNumber(ISSUE);
+
+    }
 }

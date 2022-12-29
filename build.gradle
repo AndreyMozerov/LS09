@@ -35,3 +35,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+compileTestJava {
+    options.encoding = 'Utf-8'
+}
+compileJava {
+    options.encoding = 'Utf-8'
+}
