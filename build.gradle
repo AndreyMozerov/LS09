@@ -30,15 +30,11 @@ dependencies {
             'io.qameta.allure:allure-selenide:2.20.1'
 
     )
+
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.0')
 }
 
 test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
-}
-compileTestJava {
-    options.encoding = 'Utf-8'
-}
-compileJava {
-    options.encoding = 'Utf-8'
 }
